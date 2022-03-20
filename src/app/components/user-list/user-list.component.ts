@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { MatPaginator } from '@angular/material/paginator';
+import {MatSort, Sort} from '@angular/material/sort';
 
 import {
   animate,
@@ -9,6 +11,7 @@ import {
 } from '@angular/animations';
 
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { MatTableDataSource } from '@angular/material/table';
 
 export interface PeriodicElement {
   Login_ID: string;
@@ -24,28 +27,105 @@ const ELEMENT_DATA: PeriodicElement[] = [
     Name: 'John Doe',
     Email: 'johnDoe@gmail.com',
     Role: ['Admin', 'Normal'],
-    Status: 'active',
+    Status: 'In Active',
   },
   {
     Login_ID: 'admin',
     Name: 'John Doe',
     Email: 'johnDoe@gmail.com',
     Role: ['Admin', 'Normal'],
-    Status: 'active',
+    Status: 'Active',
   },
   {
     Login_ID: 'admin',
     Name: 'John Doe',
     Email: 'johnDoe@gmail.com',
     Role: ['Admin', 'Normal'],
-    Status: 'active',
+    Status: 'Active',
   },
   {
     Login_ID: 'admin',
     Name: 'John Doe',
     Email: 'johnDoe@gmail.com',
     Role: ['Admin', 'Normal'],
-    Status: 'active',
+    Status: 'Active',
+  },
+  {
+    Login_ID: 'admin',
+    Name: 'John Doe',
+    Email: 'johnDoe@gmail.com',
+    Role: ['Admin', 'Normal'],
+    Status: 'Active',
+  },
+  {
+    Login_ID: 'admin',
+    Name: 'John Doe',
+    Email: 'johnDoe@gmail.com',
+    Role: ['Admin', 'Normal'],
+    Status: 'Active',
+  },
+  {
+    Login_ID: 'admin',
+    Name: 'John Doe',
+    Email: 'johnDoe@gmail.com',
+    Role: ['Admin', 'Normal'],
+    Status: 'Active',
+  },
+  {
+    Login_ID: 'admin',
+    Name: 'John Doe',
+    Email: 'johnDoe@gmail.com',
+    Role: ['Admin', 'Normal'],
+    Status: 'Active',
+  },
+  {
+    Login_ID: 'admin',
+    Name: 'John Doe',
+    Email: 'johnDoe@gmail.com',
+    Role: ['Admin', 'Normal'],
+    Status: 'Active',
+  },
+  {
+    Login_ID: 'admin',
+    Name: 'John Doe',
+    Email: 'johnDoe@gmail.com',
+    Role: ['Admin', 'Normal'],
+    Status: 'Active',
+  },
+  {
+    Login_ID: 'admin',
+    Name: 'John Doe',
+    Email: 'johnDoe@gmail.com',
+    Role: ['Admin', 'Normal'],
+    Status: 'Active',
+  },
+  {
+    Login_ID: 'admin',
+    Name: 'John Doe',
+    Email: 'johnDoe@gmail.com',
+    Role: ['Admin', 'Normal'],
+    Status: 'Active',
+  },
+  {
+    Login_ID: 'admin',
+    Name: 'John Doe',
+    Email: 'johnDoe@gmail.com',
+    Role: ['Admin', 'Normal'],
+    Status: 'Active',
+  },
+  {
+    Login_ID: 'admin',
+    Name: 'John Doe',
+    Email: 'johnDoe@gmail.com',
+    Role: ['Admin', 'Normal'],
+    Status: 'Active',
+  },
+  {
+    Login_ID: 'admin',
+    Name: 'John Doe',
+    Email: 'johnDoe@gmail.com',
+    Role: ['Admin', 'Normal'],
+    Status: 'Active',
   },
 ];
 
@@ -65,11 +145,12 @@ const ELEMENT_DATA: PeriodicElement[] = [
   ],
 })
 export class UserListComponent implements OnInit {
-  dataSource = ELEMENT_DATA;
+  dataSource!: MatTableDataSource<PeriodicElement>;
   columnsToDisplay = ['Login_ID', 'Name', 'Email', 'Role', 'Status'];
   expandedElement?: PeriodicElement | null;
   name = new FormControl('');
   selectedRowIndex = -1;
+  @ViewChild('paginator') paginator?: MatPaginator;
 
   userForm: FormGroup;
   constructor(private fb: FormBuilder) {
@@ -79,10 +160,14 @@ export class UserListComponent implements OnInit {
       firstName: [''],
       lastName: [''],
       mobile: [''],
-      personId: ['']
+      personId: [''],
     });
   }
 
+  ngAfterViewInit() {
+    this.dataSource = new MatTableDataSource(ELEMENT_DATA);
+    this.dataSource.paginator = this.paginator!;
+  }
   ngOnInit(): void {}
 
   clicked(column: any) {

@@ -1,11 +1,17 @@
-.userList {
+.container {
   display: flex;
+  background-color: #e8e9f2;
   justify-content: center;
   padding: 50px 0px;
 }
 
+.userList {
+  width: 90%;
+  box-shadow: 0px 5px 5px -3px rgb(0 0 0 / 20%),
+    0px 8px 10px 1px rgb(0 0 0 / 14%), 0px 3px 14px 2px rgb(0 0 0 / 12%);
+}
+
 .mat-table {
-  border-radius: 8px;
   overflow: hidden !important;
 }
 
@@ -18,7 +24,7 @@
 }
 
 table {
-  width: 80%;
+  width: 100%;
   font-family: Poppins, Helvetica, "sans-serif";
 }
 
@@ -79,10 +85,13 @@ tr.example-element-row:hover,
 }
 
 .roleStatus {
-  background-color: #c0bcbc;
+  background-color: #d7ddde75;
   margin: 0px 5px;
   padding: 5px 10px;
   border-radius: 5px;
+  display: inline-block;
+  width: 66px;
+  text-align: center;
 }
 
 #user-details {
@@ -99,20 +108,32 @@ tr.example-element-row:hover,
   padding: 25px 10px;
 }
 
-.mat-tab-label, .mat-tab-link {
+.mat-tab-label,
+.mat-tab-link {
   color: rgb(50 107 156) !important;
 }
 
-.userDetailForm{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+.userDetailForm {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
-.userDetailForm div{
-    flex: 0 0 50%;
-    max-width: 46%;
-    display: flex;
-    justify-content: space-between;
-    padding: 1% 1%;
+.userDetailForm div {
+  flex: 0 0 50%;
+  max-width: 46%;
+  display: flex;
+  justify-content: space-between;
+  padding: 1% 1%;
+}
+.mat-paginator {
+  width: 100%;
+}
+.statusActive {
+  color: #159615;
+  background: #aee6ae;
+}
+.statusInActive {
+  color: #ab2525;
+  background: #f5b1b1;
 }
