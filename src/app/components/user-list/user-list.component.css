@@ -1,0 +1,118 @@
+.userList {
+  display: flex;
+  justify-content: center;
+  padding: 50px 0px;
+}
+
+.mat-table {
+  border-radius: 8px;
+  overflow: hidden !important;
+}
+
+.mat-header-row {
+  background: rgb(50, 107, 156) !important;
+}
+.mat-header-cell {
+  color: white;
+  text-transform: uppercase;
+}
+
+table {
+  width: 80%;
+  font-family: Poppins, Helvetica, "sans-serif";
+}
+
+tr.example-detail-row {
+  height: 0;
+}
+
+tr.example-element-row:not(.example-expanded-row):hover {
+  background: whitesmoke;
+}
+
+tr.example-element-row:not(.example-expanded-row):active {
+  background: #efefef;
+}
+
+.example-element-row td {
+  border-bottom-width: 0;
+}
+
+.cdk-column-expandedDetail .example-element-detail {
+  overflow: hidden;
+  display: flex;
+  /* margin: 10px 0px; */
+  color: black;
+}
+
+.example-element-diagram {
+  min-width: 80px;
+  border: 2px solid black;
+  padding: 8px;
+  font-weight: lighter;
+  margin: 8px 0;
+  height: 104px;
+}
+
+.example-element-symbol {
+  font-weight: bold;
+  font-size: 40px;
+  line-height: normal;
+}
+
+.example-element-description {
+  padding: 16px;
+}
+
+.example-element-description-attribution {
+  opacity: 0.5;
+}
+
+/* .mat-tab-group {
+  margin-bottom: 48px;
+} */
+
+tr.example-element-row:hover,
+.example-expanded-row {
+  background: #d2e4f3 !important;
+  /* color: red !important; */
+}
+
+.roleStatus {
+  background-color: #c0bcbc;
+  margin: 0px 5px;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+#user-details {
+  width: 100%;
+  background: #f3f3f3;
+  margin: 15px 0px;
+}
+
+.mat-cell.cdk-column-expandedDetail {
+  /* padding: 15px 20px; */
+}
+
+.userDetail {
+  padding: 25px 10px;
+}
+
+.mat-tab-label, .mat-tab-link {
+  color: rgb(50 107 156) !important;
+}
+
+.userDetailForm{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.userDetailForm div{
+    flex: 0 0 50%;
+    max-width: 46%;
+    display: flex;
+    justify-content: space-between;
+    padding: 1% 1%;
+}

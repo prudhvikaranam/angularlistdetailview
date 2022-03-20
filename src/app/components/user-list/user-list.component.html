@@ -1,0 +1,250 @@
+<div class="userList" id="userList">
+  <table
+    mat-table
+    [dataSource]="dataSource"
+    multiTemplateDataRows
+    class="mat-elevation-z8"
+    matSort
+  >
+    <ng-container
+      matColumnDef="{{ column }}"
+      *ngFor="let column of columnsToDisplay"
+    >
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>{{ column }}</th>
+      <ng-container *ngIf="column === 'Role'">
+        <td mat-cell *matCellDef="let element">
+          <span class="roleStatus" *ngFor="let col of element[column]">
+            {{ col }} </span
+          >&nbsp;
+        </td>
+      </ng-container>
+      <ng-container *ngIf="column != 'Role'">
+        <td mat-cell *matCellDef="let element">{{ element[column] }}</td>
+      </ng-container>
+    </ng-container>
+
+    <ng-container matColumnDef="expandedDetail">
+      <td
+        mat-cell
+        *matCellDef="let element"
+        [attr.colspan]="columnsToDisplay.length"
+      >
+        <div
+          class="example-element-detail"
+          [@detailExpand]="
+            element == expandedElement ? 'expanded' : 'collapsed'
+          "
+        >
+          <!-- <div class="example-element-description"> -->
+          <div class="user-detail" id="user-details">
+            <mat-tab-group mat-align-tabs="start">
+              <mat-tab label="User Data">
+                <div class="userDetail" id="userDetail">
+                  <form [formGroup]="userForm">
+                    <div class="userDetailForm" id="userDetailForm">
+                      <div>
+                        <label for="loginId">Login ID:</label>
+                        <input
+                          type="text"
+                          id="loginId"
+                          name="loginId"
+                          formControlName="loginID"
+                        />
+                      </div>
+                      <div>
+                        <label for="emailId">Email ID:</label>
+                        <input
+                          type="text"
+                          id="emailId"
+                          name="emailId"
+                          formControlName="emailId"
+                        />
+                      </div>
+                      <div>
+                        <label for="firstName">First Name</label>
+                        <input
+                          type="text"
+                          id="firstName"
+                          name="firstName"
+                          formControlName="firstName"
+                        />
+                      </div>
+                      <div>
+                        <label for="lastName">Last Name:</label>
+                        <input
+                          type="text"
+                          id="lastName"
+                          name="lastName"
+                          formControlName="lastName"
+                        />
+                      </div>
+                      <div>
+                        <label for="mobile">Mobile:</label>
+                        <input
+                          type="text"
+                          id="mobile"
+                          name="mobile"
+                          formControlName="mobile"
+                        />
+                      </div>
+                      <div>
+                        <label for="personId">Person ID:</label>
+                        <input
+                          type="text"
+                          id="personId"
+                          name="personId"
+                          formControlName="personId"
+                        />
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </mat-tab>
+              <mat-tab label="Other Data"
+                ><div class="userDetail" id="userDetail">
+                  <form [formGroup]="userForm">
+                    <div class="userDetailForm" id="userDetailForm">
+                      <div>
+                        <label for="loginId">Login ID:</label>
+                        <input
+                          type="text"
+                          id="loginId"
+                          name="loginId"
+                          formControlName="loginID"
+                        />
+                      </div>
+                      <div>
+                        <label for="emailId">Email ID:</label>
+                        <input
+                          type="text"
+                          id="emailId"
+                          name="emailId"
+                          formControlName="emailId"
+                        />
+                      </div>
+                      <div>
+                        <label for="firstName">First Name</label>
+                        <input
+                          type="text"
+                          id="firstName"
+                          name="firstName"
+                          formControlName="firstName"
+                        />
+                      </div>
+                      <div>
+                        <label for="lastName">Last Name:</label>
+                        <input
+                          type="text"
+                          id="lastName"
+                          name="lastName"
+                          formControlName="lastName"
+                        />
+                      </div>
+                      <div>
+                        <label for="mobile">Mobile:</label>
+                        <input
+                          type="text"
+                          id="mobile"
+                          name="mobile"
+                          formControlName="mobile"
+                        />
+                      </div>
+                      <div>
+                        <label for="personId">Person ID:</label>
+                        <input
+                          type="text"
+                          id="personId"
+                          name="personId"
+                          formControlName="personId"
+                        />
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </mat-tab>
+              <mat-tab label="History"
+                ><div class="userDetail" id="userDetail">
+                  <form [formGroup]="userForm">
+                    <div class="userDetailForm" id="userDetailForm">
+                      <div>
+                        <label for="loginId">Login ID:</label>
+                        <input
+                          type="text"
+                          id="loginId"
+                          name="loginId"
+                          formControlName="loginID"
+                        />
+                      </div>
+                      <div>
+                        <label for="emailId">Email ID:</label>
+                        <input
+                          type="text"
+                          id="emailId"
+                          name="emailId"
+                          formControlName="emailId"
+                        />
+                      </div>
+                      <div>
+                        <label for="firstName">First Name</label>
+                        <input
+                          type="text"
+                          id="firstName"
+                          name="firstName"
+                          formControlName="firstName"
+                        />
+                      </div>
+                      <div>
+                        <label for="lastName">Last Name:</label>
+                        <input
+                          type="text"
+                          id="lastName"
+                          name="lastName"
+                          formControlName="lastName"
+                        />
+                      </div>
+                      <div>
+                        <label for="mobile">Mobile:</label>
+                        <input
+                          type="text"
+                          id="mobile"
+                          name="mobile"
+                          formControlName="mobile"
+                        />
+                      </div>
+                      <div>
+                        <label for="personId">Person ID:</label>
+                        <input
+                          type="text"
+                          id="personId"
+                          name="personId"
+                          formControlName="personId"
+                        />
+                      </div>
+                    </div>
+                  </form></div
+              ></mat-tab>
+            </mat-tab-group>
+          </div>
+        </div>
+        <!-- </div> -->
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+    <tr
+      mat-row
+      *matRowDef="let element; columns: columnsToDisplay; let i = index"
+      class="example-element-row"
+      [class.example-expanded-row]="expandedElement === element"
+      (click)="
+        expandedElement = expandedElement === element ? null : element;
+        clicked(element)
+      "
+    ></tr>
+    <tr
+      mat-row
+      *matRowDef="let row; columns: ['expandedDetail']"
+      class="example-detail-row"
+    ></tr>
+  </table>
+</div>
