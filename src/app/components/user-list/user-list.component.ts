@@ -19,6 +19,7 @@ export interface PeriodicElement {
   Email: string;
   Role: any;
   Status: string;
+  Action : string;
 }
 
 const ELEMENT_DATA: PeriodicElement[] = [
@@ -28,6 +29,8 @@ const ELEMENT_DATA: PeriodicElement[] = [
     Email: 'johnDoe@gmail.com',
     Role: ['Admin', 'Normal'],
     Status: 'In Active',
+    Action : ''
+
   },
   {
     Login_ID: 'admin',
@@ -35,6 +38,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
     Email: 'johnDoe@gmail.com',
     Role: ['Admin', 'Normal'],
     Status: 'Active',
+    Action : ''
   },
   {
     Login_ID: 'admin',
@@ -42,6 +46,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
     Email: 'johnDoe@gmail.com',
     Role: ['Admin', 'Normal'],
     Status: 'Active',
+    Action : ''
   },
   {
     Login_ID: 'admin',
@@ -49,6 +54,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
     Email: 'johnDoe@gmail.com',
     Role: ['Admin', 'Normal'],
     Status: 'Active',
+    Action : ''
   },
   {
     Login_ID: 'admin',
@@ -56,6 +62,8 @@ const ELEMENT_DATA: PeriodicElement[] = [
     Email: 'johnDoe@gmail.com',
     Role: ['Admin', 'Normal'],
     Status: 'Active',
+    Action : ''
+
   },
   {
     Login_ID: 'admin',
@@ -63,6 +71,8 @@ const ELEMENT_DATA: PeriodicElement[] = [
     Email: 'johnDoe@gmail.com',
     Role: ['Admin', 'Normal'],
     Status: 'Active',
+    Action : ''
+
   },
   {
     Login_ID: 'admin',
@@ -70,6 +80,8 @@ const ELEMENT_DATA: PeriodicElement[] = [
     Email: 'johnDoe@gmail.com',
     Role: ['Admin', 'Normal'],
     Status: 'Active',
+    Action : ''
+
   },
   {
     Login_ID: 'admin',
@@ -77,6 +89,8 @@ const ELEMENT_DATA: PeriodicElement[] = [
     Email: 'johnDoe@gmail.com',
     Role: ['Admin', 'Normal'],
     Status: 'Active',
+    Action : ''
+
   },
   {
     Login_ID: 'admin',
@@ -84,6 +98,8 @@ const ELEMENT_DATA: PeriodicElement[] = [
     Email: 'johnDoe@gmail.com',
     Role: ['Admin', 'Normal'],
     Status: 'Active',
+    Action : ''
+
   },
   {
     Login_ID: 'admin',
@@ -91,6 +107,8 @@ const ELEMENT_DATA: PeriodicElement[] = [
     Email: 'johnDoe@gmail.com',
     Role: ['Admin', 'Normal'],
     Status: 'Active',
+    Action : ''
+
   },
   {
     Login_ID: 'admin',
@@ -98,6 +116,8 @@ const ELEMENT_DATA: PeriodicElement[] = [
     Email: 'johnDoe@gmail.com',
     Role: ['Admin', 'Normal'],
     Status: 'Active',
+    Action : ''
+
   },
   {
     Login_ID: 'admin',
@@ -105,6 +125,8 @@ const ELEMENT_DATA: PeriodicElement[] = [
     Email: 'johnDoe@gmail.com',
     Role: ['Admin', 'Normal'],
     Status: 'Active',
+    Action : ''
+
   },
   {
     Login_ID: 'admin',
@@ -112,6 +134,8 @@ const ELEMENT_DATA: PeriodicElement[] = [
     Email: 'johnDoe@gmail.com',
     Role: ['Admin', 'Normal'],
     Status: 'Active',
+    Action : ''
+
   },
   {
     Login_ID: 'admin',
@@ -119,6 +143,8 @@ const ELEMENT_DATA: PeriodicElement[] = [
     Email: 'johnDoe@gmail.com',
     Role: ['Admin', 'Normal'],
     Status: 'Active',
+    Action : ''
+
   },
   {
     Login_ID: 'admin',
@@ -126,7 +152,9 @@ const ELEMENT_DATA: PeriodicElement[] = [
     Email: 'johnDoe@gmail.com',
     Role: ['Admin', 'Normal'],
     Status: 'Active',
-  },
+    Action : ''
+
+  }
 ];
 
 @Component({
@@ -146,7 +174,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
 })
 export class UserListComponent implements OnInit {
   dataSource!: MatTableDataSource<PeriodicElement>;
-  columnsToDisplay = ['Login_ID', 'Name', 'Email', 'Role', 'Status'];
+  columnsToDisplay = ['Login_ID', 'Name', 'Email', 'Role', 'Status','Action'];
   expandedElement?: PeriodicElement | null;
   name = new FormControl('');
   selectedRowIndex = -1;

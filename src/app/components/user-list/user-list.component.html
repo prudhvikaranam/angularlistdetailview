@@ -23,9 +23,22 @@
 
         <ng-container *ngIf="column === 'Status'">
           <td mat-cell *matCellDef="let element">
-            <span class="roleStatus" [ngClass] = "{'statusActive' : element[column] == 'Active','statusInActive' : element[column] == 'In Active'}">
+            <span
+              class="roleStatus"
+              [ngClass]="{
+                statusActive: element[column] == 'Active',
+                statusInActive: element[column] == 'In Active'
+              }"
+            >
               {{ element[column] }} </span
             >&nbsp;
+          </td>
+        </ng-container>
+
+        <ng-container *ngIf="column === 'Action'">
+          <td mat-cell *matCellDef="let element">
+            <span class="icons icons-edit"><i class="fa-solid fa-pen-to-square"></i></span>&nbsp;&nbsp;
+            <span class="icons icons-copy"><i class="fa-solid fa-trash"></i></span>
           </td>
         </ng-container>
 

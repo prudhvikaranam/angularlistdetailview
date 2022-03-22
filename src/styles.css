@@ -14,6 +14,36 @@ body {
   color: rgb(50 107 156) !important;
 }
 
-.mat-tab-group.mat-primary .mat-ink-bar,.mat-tab-nav-bar.mat-primary .mat-ink-bar {
-    background-color: rgb(50 107 156) !important;
+.mat-tab-group.mat-primary .mat-ink-bar,
+.mat-tab-nav-bar.mat-primary .mat-ink-bar {
+  background-color: rgb(50 107 156) !important;
+}
+
+.fa-pen-to-square {
+  color: #326b9c;
+}
+
+.fa-trash {
+  color: red;
+}
+
+.icons {
+  padding: 5px;
+  background: #edeff0;
+  border-radius: 5px;
+}
+
+.icons-edit:hover {
+  background: #326b9c;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.icons-copy:hover {
+  background: #326b9c;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.icons:hover .fa-solid {
+  color: white;
 }
